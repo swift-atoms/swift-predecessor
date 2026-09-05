@@ -1,7 +1,9 @@
 public import Subtraction
 
 /// The identity and fixed-width integer kernel for selecting a previous value.
-public enum Predecessor {
+public enum Predecessor {}
+
+extension Predecessor {
 
     @inlinable
     public static func reporting<Value: FixedWidthInteger>(

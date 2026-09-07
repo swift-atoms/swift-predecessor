@@ -9,8 +9,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Predecessor", targets: ["Predecessor"]),
-        .library(name: "Predecessor Standard Library Integration", targets: ["Predecessor Standard Library Integration"]),
-        .library(name: "Predecessor Foundation Library Integration", targets: ["Predecessor Foundation Library Integration"]),
+
+        .library(name: "Predecessor Foundation Integration", targets: ["Predecessor Foundation Integration"]),
         .library(name: "Predecessor Test Support", targets: ["Predecessor Test Support"]),
     ],
     dependencies: [
@@ -27,20 +27,13 @@ let package = Package(
             ],
             path: "Sources/Predecessor"
         ),
+        
         .target(
-            name: "Predecessor Standard Library Integration",
+            name: "Predecessor Foundation Integration",
             dependencies: [
                 .target(name: "Predecessor"),
             ],
-            path: "Sources/Predecessor Standard Library Integration"
-        ),
-        .target(
-            name: "Predecessor Foundation Library Integration",
-            dependencies: [
-                .target(name: "Predecessor"),
-                .target(name: "Predecessor Standard Library Integration"),
-            ],
-            path: "Sources/Predecessor Foundation Library Integration"
+            path: "Sources/Predecessor Foundation Integration"
         ),
         .target(
             name: "Predecessor Test Support",
@@ -55,8 +48,7 @@ let package = Package(
                 .target(name: "Predecessor"),
                 .product(name: "Subtraction", package: "swift-subtraction"),
                 .target(name: "Predecessor Test Support"),
-                .target(name: "Predecessor Standard Library Integration"),
-                .target(name: "Predecessor Foundation Library Integration"),
+                .target(name: "Predecessor Foundation Integration"),
             ],
             path: "Tests/Predecessor Tests"
         ),

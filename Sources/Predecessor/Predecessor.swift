@@ -1,6 +1,6 @@
 public import Subtraction
 
-/// The identity and fixed-width integer kernel for selecting a previous value.
+
 public enum Predecessor {}
 
 extension Predecessor {

@@ -3,10 +3,10 @@ import Predecessor
 import Testing
 
 @Suite
-struct `Predecessor Tests` {
+struct `Predecessor checks and saturates movement to the previous value` {
 
     @Test
-    func `reports and throws at the least value`() {
+    func `Predecessor reports and throws at the least value`() {
         let report = Predecessor.reporting(UInt.zero)
         #expect(report.value == UInt.max)
         #expect(report.overflow)
@@ -16,7 +16,7 @@ struct `Predecessor Tests` {
     }
 
     @Test
-    func `exact and saturating select the previous value`() throws {
+    func `Exact and saturating predecessor operations select the previous value`() throws {
         #expect(try Predecessor.exact(UInt(42)) == 41)
         #expect(Predecessor.saturating(UInt.zero) == .zero)
     }
